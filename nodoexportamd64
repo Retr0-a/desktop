@@ -1,10 +1,12 @@
+sudo su -l
 sudo apt update -y && sudo apt upgrade -y && sudo apt-get update -y && sudo apt-get update -y
 
-wget https://github.com/prometheus/node_exporter/releases/download/v1.3.1/node_exporter-1.3.1.linux-amd64.tar.gz
-tar -xvf node_exporter-1.3.1.linux-amd64.tar.gz
-sudo mv node_exporter-1.3.1.linux-amd64.tar.gz/node_exporter /usr/local/bin/
+wget -P /tmp https://github.com/prometheus/node_exporter/releases/download/v1.3.1/node_exporter-1.3.1.linux-amd64.tar.gz
+tar -xvf /tmp/node_exporter-1.3.1.linux-amd64.tar.gz
+sudo mv /tmp/node_exporter-1.3.1.linux-amd64/node_exporter /usr/local/bin/
 sudo useradd -rs /bin/false node_exporter
-sudo echo "[Unit]
+sudo echo "
+[Unit]
 Description=Node Exporter
 After=network.target
 
@@ -15,7 +17,7 @@ Type=simple
 ExecStart=/usr/local/bin/node_exporter
 
 [Install]
-WantedBy=multi-user.target" /etc/systemd/system/node_exporter.service
+WantedBy=multi-user.target" >> /etc/systemd/system/node_exporter.service
 
 sudo systemctl daemon-reload
 sudo systemctl start node_exporter

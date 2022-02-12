@@ -4,7 +4,6 @@ sudo tasksel install lubuntu-desktop -y
 mkdir temp
 cd temp
 wget https://download.nomachine.com/download/7.8/Arm/nomachine_7.8.2_1_arm64.deb
-sudo 
 sudo dpkg -i nomachine_7.8.2_1_arm64.deb
 sudo apt install firewalld -y
 sudo firewall-cmd --zone=public --permanent --add-port=4000/tcp

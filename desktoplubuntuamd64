@@ -1,9 +1,10 @@
+sudo su -l
 sudo apt update -y && sudo apt upgrade -y && sudo apt-get update -y && sudo apt-get update -y
 sudo apt install tasksel -y
 sudo tasksel install lubuntu-desktop -y
 
-wget https://download.nomachine.com/download/7.8/Linux/nomachine_7.8.2_1_amd64.deb
-sudo dpkg -i nomachine_7.8.2_1_amd64.deb
+wget -P /tmp https://download.nomachine.com/download/7.8/Linux/nomachine_7.8.2_1_amd64.deb
+sudo dpkg -i /tmp/nomachine_7.8.2_1_amd64.deb
 sudo apt install firewalld -y
 sudo firewall-cmd --zone=public --permanent --add-port=4000/tcp
 sudo firewall-cmd --zone=public --permanent --add-port=4000/udp

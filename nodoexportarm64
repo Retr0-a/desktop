@@ -3,7 +3,7 @@ sudo apt update -y && sudo apt upgrade -y && sudo apt-get update -y && sudo apt-
 
 wget -P /tmp https://github.com/prometheus/node_exporter/releases/download/v1.3.1/node_exporter-1.3.1.linux-arm64.tar.gz
 tar -xvf /tmp/node_exporter-1.3.1.linux-arm64.tar.gz
-sudo mv node_exporter-1.3.1.linux-arm64.tar.gz/node_exporter /usr/local/bin/
+sudo mv node_exporter-1.3.1.linux-arm64/node_exporter /usr/local/bin/
 sudo useradd -rs /bin/false node_exporter
 sudo echo "[Unit]
 Description=Node Exporter

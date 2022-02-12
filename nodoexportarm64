@@ -24,5 +24,5 @@ sudo systemctl enable node_exporter
 sudo apt install firewalld -y
 sudo firewall-cmd --zone=public --permanent --add-port=9100/tcp
 sudo firewall-cmd --zone=public --permanent --add-port=9100/udp
-sudo firewall-cmd --reload -y
+sudo firewall-cmd --reload
 sudo reboot

@@ -8,5 +8,5 @@ sudo dpkg -i nomachine_7.8.2_1_arm64.deb
 sudo apt install firewalld -y
 sudo firewall-cmd --zone=public --permanent --add-port=4000/tcp
 sudo firewall-cmd --zone=public --permanent --add-port=4000/udp
-sudo firewall-cmd --reload -y
+sudo firewall-cmd --reload
 sudo reboot
